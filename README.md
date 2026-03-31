@@ -8,7 +8,7 @@ Hyperparameters not specified in the paper (loss function, batch size, patch str
 
 ## What It Does
 
-Historical architectural drawings accumulate stains that can be as dark as the drawn lines themselves, causing traditional thresholding techniques to fail. This script trains shallow convolutional autoencoders on manually cleaned patches from a *single* drawing (less than 1% of a collection), then generalizes to binarize every other drawing automatically — separating ink lines from stains, linen texture, pencil marks, and tape residue.
+Historical architectural drawings accumulate stains that can be as dark as the drawn lines themselves, causing traditional thresholding techniques to fail. This script trains shallow convolutional autoencoders on manually cleaned patches from a _single_ drawing (less than 1% of a collection), then generalizes to binarize every other drawing automatically — separating ink lines from stains, linen texture, pencil marks, and tape residue.
 
 ## Pipeline Overview
 
@@ -79,26 +79,26 @@ python binarize.py compare \
 
 ## Available Models
 
-| Model | Type | Input Size | Params |
-|-------|------|-----------|--------|
-| 1 | Deep | 32×32 | 148,865 |
-| 2 | Shallow | 32×32 | 1,217 |
-| 3 | Deep | 64×64 | 739,073 |
-| 4 | Shallow | 64×64 | 1,217 |
-| 5 | Deep | 128×128 | 739,073 |
-| 6 | Shallow | 128×128 | 1,217 |
-| 7 | Deep | 256×256 | 3,099,137 |
-| 8 | Shallow | 256×256 | 1,217 |
+| Model | Type    | Input Size | Params    |
+| ----- | ------- | ---------- | --------- |
+| 1     | Deep    | 32×32      | 148,865   |
+| 2     | Shallow | 32×32      | 1,217     |
+| 3     | Deep    | 64×64      | 739,073   |
+| 4     | Shallow | 64×64      | 1,217     |
+| 5     | Deep    | 128×128    | 739,073   |
+| 6     | Shallow | 128×128    | 1,217     |
+| 7     | Deep    | 256×256    | 3,099,137 |
+| 8     | Shallow | 256×256    | 1,217     |
 
 The paper found that shallow models consistently outperform their deep counterparts (F1 up to 0.977 vs. 0.968), while requiring orders of magnitude fewer parameters.
 
 ## Key Hyperparameters
 
-| Parameter | Value | Source |
-|-----------|-------|--------|
-| Loss | MSE | Author |
-| Optimizer | Adam (lr=0.001) | Paper §3.2 |
-| Batch size | 32 | Author |
-| Epochs | 100 | Paper §3.2 |
-| Train/val split | 70/30 | Paper §3.2 |
-| Binarization threshold | 0.5 | Standard default |
+| Parameter              | Value           | Source           |
+| ---------------------- | --------------- | ---------------- |
+| Loss                   | MSE             | Author           |
+| Optimizer              | Adam (lr=0.001) | Paper §3.2       |
+| Batch size             | 32              | Author           |
+| Epochs                 | 100             | Paper §3.2       |
+| Train/val split        | 70/30           | Paper §3.2       |
+| Binarization threshold | 0.5             | Standard default |

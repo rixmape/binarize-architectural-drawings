@@ -1,0 +1,70 @@
+Bicol University Mail	Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Full-Text Request: Binarizing Historical Architectural Drawings
+6 messages
+Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>	Wed, Feb 4, 2026 at 12:12 PM
+To: mnarag@nip.upd.edu.ph
+Dear Mr. Narag,
+I came across your recent paper on using shallow convolutional autoencoders to binarize degraded architectural drawings and found it highly relevant to my work. Unfortunately, I don't have institutional access.
+Would you be willing to share a copy of the full text?
+Thank you!
+Rixdon Niño R. Mape
+BS Computer Science, 2025
+Bicol University
+Mark Jeremy Narag <mnarag@nip.upd.edu.ph>	Wed, Feb 4, 2026 at 5:10 PM
+To: Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Hello Rixdon,
+Thank you for reaching out. Here's the copy of the paper. Feel free to ask questions.
+Regards,
+Jem
+Mark Jeremy Narag, Ph.D.
+[Quoted text hidden]
+[Quoted text hidden]
+“This message contains confidential information and is intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.
+E-mail transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability for any errors or omissions in the contents of this message, which arise as a result of e-mail transmission. If verification is required please request a hard-copy version.” Bicol University, Legazpi City, Philippines.
+[4] Binarizing historical architectural drawings with shallow convolutional autoencoders.pdf
+16411K
+Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>	Thu, Feb 5, 2026 at 11:10 AM
+To: Mark Jeremy Narag <mnarag@nip.upd.edu.ph>
+Dear Dr. Narag,
+Received, thank you! I’ve read it through—brilliant work demonstrating that shallow models can outperform deep ones here.
+I am diving into code replication immediately but hit a few blockers regarding variables not explicitly defined in the text. Could you clarify these?
+1. The paper mentions data is available on request. Could you share the 26 raw scans and the manually cleaned "ground truth" file for Drawing 1? I cannot generate the training pairs without your specific manual cleaning.
+2. What loss function (e.g., binary cross-entropy vs. MSE) and batch size did you use for the 100 epochs?
+3. You mentioned "overlapping small patches". What specific stride or overlap percentage was used?
+4. How did you handle the overlaps during reconstruction... simple averaging?
+I’m excited to get this running!
+Best regards,
+Rixdon Niño R. Mape
+BS Computer Science, 2025
+Bicol University
+[Quoted text hidden]
+Mark Jeremy Narag <mnarag@nip.upd.edu.ph>	Sat, Feb 7, 2026 at 12:17 PM
+To: Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Hello Rixdon,
+Apologies for the delay. Here:
+1. The scans are in high resolution (~0.5 to 1GB per image). I will ask permission first from all my co-authors if the high-res version can be shared (the original owner is National Museum of the Philippines). I will get back to you next week. Remind me if I forget.
+2. MSE, batch size = 32
+3. Depends. Stride size is 0.75 of the input size for 64 by 64, so the overlap is 25%. Stride size and overlap will depend on the input size. Smaller input size (32 by 32) does not necessarily need overlap since you can already generate thousands of training images here. For bigger input sizes (256 by 256), the overlap will be larger.
+4. During reconstruction on the test sets, no need to implement overlap. Overlapping is done only on the training set to create a larger training dataset.
+Regards,
+Jem
+[Quoted text hidden]
+Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>	Mon, Feb 9, 2026 at 8:55 AM
+To: Mark Jeremy Narag <mnarag@nip.upd.edu.ph>
+Dear Dr. Narag,
+Quick update. I went ahead and wrote a full replication of your pipeline based on the paper and your clarifications. Here's the repo:
+https://github.com/rixmape/binarize-architectural-drawings
+Note: the code hasn't been tested on the actual dataset yet—just verified structurally. I'd love to run it on your scans once access is sorted.
+On the research side, I'm planning to extend the study with interpretability techniques to investigate why shallow models outperform deeper ones in this task. The idea is to use CKA to compare learned representations across depths, Grad-CAM to diagnose failure cases, and UMAP to visualize the latent space structure. Early-stage thinking, but I believe the shallow architecture makes this uniquely tractable.
+Would welcome any feedback on the repo or the direction.
+Best regards,
+Rix
+[Quoted text hidden]
+Mark Jeremy Narag <mnarag@nip.upd.edu.ph>	Fri, Feb 20, 2026 at 12:45 PM
+To: Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Hello Rixdon,
+I will send in a separate email the copy of one architectural drawing (including the binarized version for the training and ground truth). I will CC my adviser, Dr. Maricor Soriano. Please include her in the succeeding email threads. I will send the images within the day.
+Thank you
+Regards,
+Jem
+[Quoted text hidden]

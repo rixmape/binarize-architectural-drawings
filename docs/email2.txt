@@ -1,0 +1,27 @@
+Bicol University Mail	Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Copy of training data on binarization of architectural drawings
+2 messages
+Mark Jeremy Narag <mnarag@nip.upd.edu.ph>	Fri, Feb 20, 2026 at 4:43 PM
+To: Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>
+Cc: Maricor Soriano <jing@nip.upd.edu.ph>
+Hello Rixdon,
+I uploaded the following training images in this directory. For reference, the uploaded images are the following:
+MFP_A_2_calibrated_stitch.tiff - scan of Drawing #1 in 470 dpi. The third quadrant of this drawing will be used for training (70-30 split).
+train_input.png & train_output.png  - ~70% of the third quadrant.
+validation_input.png & validation_output.png  - ~30% of the third quadrant.
+test_input.png & test_output.png  - 2nd quadrant of Drawing #1, which has never been seen by the model.
+CCed here is my adviser, Dr. Maricor Soriano. Please be advised that in case you wish to publish your results, our paper should be properly cited.
+Thank you.
+Regards,
+Jem
+Mark Jeremy Narag
+National Institute of Physics
+University of the Philippines Diliman
+Rixdon Niño Mape <rixdonninorecario.mape@bicol-u.edu.ph>	Sat, Feb 21, 2026 at 8:24 AM
+To: Mark Jeremy Narag <mnarag@nip.upd.edu.ph>
+Hi Dr. Narag, and nice to meet you, Dr. Soriano!
+Got the files—huge thanks! I will absolutely make sure your paper is properly cited in the repository and any resulting publications.
+I'm spinning up the training scripts on Drawing #1 right now to see if I can replicate your Table 1 metrics with my setup.
+Best,
+Rix
+[Quoted text hidden]
